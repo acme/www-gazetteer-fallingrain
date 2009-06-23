@@ -4,7 +4,8 @@ Revision history for Perl module WWW::Gazetteer::FallingRain:
      - perltidy
      - add computer-readable license
      - add human-readable license
-
+     - move test into t/ directory
+   
 0.14 Sat Jan 29 11:11:43 CET 2005
      - reworked and renamed as the database has moved from calle.com
        to fallingrain.com
