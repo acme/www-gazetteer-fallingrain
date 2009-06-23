@@ -2,6 +2,7 @@ Revision history for Perl module WWW::Gazetteer::FallingRain:
 
 0.15
      - perltidy
+     - add computer-readable license
 
 0.14 Sat Jan 29 11:11:43 CET 2005
      - reworked and renamed as the database has moved from calle.com

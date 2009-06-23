@@ -9,6 +9,7 @@ WriteMakefile(
         'Test::Simple'   => 0.01,
         'WWW::Gazetteer' => '0.23',
     },
-    AUTHOR => 'Leon Brocard <acme@astray.com>',
+    AUTHOR  => 'Leon Brocard <acme@astray.com>',
+    LICENSE => 'perl',
 );
 
