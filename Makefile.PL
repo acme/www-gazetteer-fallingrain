@@ -3,6 +3,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME         => "WWW::Gazetteer::FallingRain",
+    ABSTRACT     => 'Find location of world towns and cities',
     VERSION_FROM => 'FallingRain.pm',
     PREREQ_PM    => {
         'LWP::UserAgent' => 0.01,
