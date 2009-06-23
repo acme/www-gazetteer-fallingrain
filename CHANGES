@@ -1,6 +1,6 @@
 Revision history for Perl module WWW::Gazetteer::FallingRain: 
 
-0.15
+0.15 Tue Jun 23 21:11:39 BST 2009
      - perltidy
      - add computer-readable license
      - add human-readable license

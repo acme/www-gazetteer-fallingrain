@@ -6,7 +6,7 @@ use HTTP::Cookies;
 use LWP::UserAgent;
 
 use vars qw($VERSION);
-$VERSION = '0.14';
+$VERSION = '0.15';
 
 my $countries = {
     'aw'                     => 'AA',
