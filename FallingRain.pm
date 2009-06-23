@@ -1,5 +1,6 @@
 package WWW::Gazetteer::FallingRain;
 use strict;
+use warnings;
 use Carp qw(croak);
 use HTTP::Cookies;
 use LWP::UserAgent;

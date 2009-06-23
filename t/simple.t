@@ -1,5 +1,6 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 use strict;
+use warnings;
 use Test::More tests => 7;
 
 BEGIN { use_ok('WWW::Gazetteer'); }
