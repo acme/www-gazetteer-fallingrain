@@ -612,7 +612,7 @@ WWW::Gazetteer::FallingRain - Find location of world towns and cities
 
 A gazetteer is a geographical dictionary (as at the back of an
 atlas). The C<WWW::Gazetteer::FallingRain> module uses the information at
-http://www.calle.com/world/ to return geographical location
+http://www.fallingrain.com/world/ to return geographical location
 (longitude, latitude, elevation) for towns and cities in countries in
 the world.
 

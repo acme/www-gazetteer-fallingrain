@@ -13,8 +13,9 @@ SYNOPSYS
 DESCRIPTION
     A gazetteer is a geographical dictionary (as at the back of an atlas).
     The "WWW::Gazetteer::FallingRain" module uses the information at
-    http://www.calle.com/world/ to return geographical location (longitude,
-    latitude, elevation) for towns and cities in countries in the world.
+    http://www.fallingrain.com/world/ to return geographical location
+    (longitude, latitude, elevation) for towns and cities in countries in
+    the world.
 
     This module is a subclass of "WWW::Gazetteer", so you must use that to
     create a "WWW::Gazetteer::FallingRain" object. Once you have imported
