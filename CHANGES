@@ -1,0 +1,25 @@
+Revision history for Perl module WWW::Gazetteer::FallingRain: 
+
+0.14 Sat Jan 29 11:11:43 CET 2005
+     - reworked and renamed as the database has moved from calle.com
+       to fallingrain.com
+
+0.13 Mon Oct 21 20:29:52 BST 2002
+     - update docs and tests to reflect new WWW::Gazetteer factory
+
+0.12 Sat Oct 19 12:02:46 BST 2002
+
+     - after discussion with Philippe "BooK" Bruhat, have renamed the
+       module to WWW::Gazetteer::Calle and this is the first attempt
+       at a combined API
+       - now accept ISO country codes
+       - now return elevation
+       - renamed fetch() to find()
+       - find() now returns lists (or a listref in scalar context)
+       - more tests
+
+0.11 Sun Sep 29 11:31:19 BST 2002
+	- fix scalar context bug
+
+0.10 Sun Sep 29 10:37:11 BST 2002
+	- first released version

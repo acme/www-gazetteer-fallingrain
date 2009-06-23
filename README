@@ -1,0 +1,119 @@
+NAME
+    WWW::Gazetteer::FallingRain - Find location of world towns and cities
+
+SYNOPSYS
+      use WWW::Gazetteer;
+      my $g = WWW::Gazetteer::FallingRain->new('calle');
+      my @londons = $g->find(UK => 'London');
+      my $london = $londons[0];
+      print $london->{longitude}, ", ", $london->{latitude}, "\n";
+      my $nice = $g->find("Nice", "France")->[0];
+      print $nice->{city}, ", ", $nice->{elevation}, "\n";
+
+DESCRIPTION
+    A gazetteer is a geographical dictionary (as at the back of an atlas).
+    The "WWW::Gazetteer::FallingRain" module uses the information at
+    http://www.calle.com/world/ to return geographical location (longitude,
+    latitude, elevation) for towns and cities in countries in the world.
+
+    This module is a subclass of "WWW::Gazetteer", so you must use that to
+    create a "WWW::Gazetteer::FallingRain" object. Once you have imported
+    the module and created a gazetteer object, calling find($country =>
+    $town) will return a list of hashrefs with longitude and latitude
+    information.
+
+      my @londons = $g->find(UK => 'London');
+      my $london = $londons[0];
+      print $london->{longitude}, ", ", $london->{latitude}, "\n";
+      # prints -0.1167, 51.5000
+
+    The hashref for London actually looks like this:
+
+      $london = {
+        longitude => "-0.1167",
+        latitude  => "51.5000",
+        city      => 'London',
+        country   => 'UK',
+        elevation => "14",
+      };
+
+    The city and country values are the same as the ones you used. The
+    elevation is elevation above sea level in meters. The longitude and
+    latitude are in degrees, ranging from -180 to 180 where (0, 0) is on the
+    Prime Meridian and the equator.
+
+METHODS
+  new()
+    This returns a new WWW::Gazetteer::FallingRain object. It currently has
+    no arguments:
+
+      use WWW::Gazetteer;
+      my $g = WWW::Gazetteer->new('calle');
+
+  find()
+    The find method looks up geographical information and returns it to you.
+    It takes in a country and a city, with the recommended syntax being ISO
+    3166 code and city name. However, it also tries to do what you mean.
+
+    Note that there may be more than one town or city with that name in the
+    country. You will get a list of hashrefs for each town/city.
+
+      my @londons = $g->find("UK" => "London");
+      my @londons = $g->find("United Kingdom" => "London");
+      my @londons = $g->find("London", "United Kingdom");
+
+    The following countries are valid (as are their ISO 3166 codes):
+    Afghanistan, Albania, American Samoa, Angola, Anguilla, Antigua and
+    Barbuda, Argentina, Armenia, Aruba, Australia, Austria, Azerbaijan,
+    Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Bermuda,
+    Bhutan, Bolivia, Bosnia and Herzegovina, Botswana, Bouvet Island,
+    Brazil, British Indian Ocean Territory, Brunei Darussalam, Bulgaria,
+    Burkina Faso, Cambodia, Cameroon, Canada, Cape Verde, Cayman Islands,
+    Central African Republic, Chad, China, Christmas Island, Colombia,
+    Congo, Congo, The Democratic Republic of the, Cook Islands, Costa Rica,
+    Cote D'Ivoire, Croatia, Cuba, Cyprus, Czech Republic, Denmark, Djibouti,
+    Dominican Republic, Ecuador, Egypt, El Salvador, Equatorial Guinea,
+    Eritrea, Estonia, Ethiopia, Falkland Islands (Malvinas), Faroe Islands,
+    Fiji, Finland, France, French Guiana, French Polynesia, Gabon, Gambia,
+    Georgia, Ghana, Gibraltar, Greece, Greenland, Grenada, Guadeloupe,
+    Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Heard Island and
+    McDonald Islands, Honduras, Hong Kong, Hungary, Iceland, India,
+    Indonesia, Iran, Islamic Republic of, Iraq, Ireland, Italy, Jamaica,
+    Japan, Jordan, Kazakhstan, Kenya, Korea, Republic of, Kuwait,
+    Kyrgyzstan, Lao People's Democratic Republic, Latvia, Lebanon, Lesotho,
+    Libyan Arab Jamahiriya, Liechtenstein, Lithuania, Luxembourg, Macao,
+    Macedonia, the Former Yugoslav Republic of, Madagascar, Malawi,
+    Malaysia, Maldives, Mali, Malta, Marshall Islands, Mauritania,
+    Mauritius, Mayotte, Mexico, Micronesia, Federated States of, Moldova,
+    Republic of, Monaco, Mongolia, Morocco, Mozambique, Namibia, Nauru,
+    Nepal, Netherlands Antilles, Netherlands, New Caledonia, New Zealand,
+    Nicaragua, Niger, Nigeria, Niue, Norfolk Island, Northern Mariana
+    Islands, Norway, Pakistan, Palestinian Territory, Occupied, Panama,
+    Papua New Guinea, Peru, Philippines, Poland, Portugal, Qatar, Reunion,
+    Romania, Russian Federation, Rwanda, Saint Helena, Saint Kitts and
+    Nevis, Saint Pierre and Miquelon, Saint Vincent and the Grenadines,
+    Samoa, San Marino, Sao Tome and Principe, Saudi Arabia, Senegal, Serbia
+    and Montenegro, Seychelles, Sierra Leone, Singapore, Slovakia, Slovenia,
+    Solomon Islands, Somalia, South Africa, South Georgia and the South
+    Sandwich Islands, Spain, Sri Lanka, Sudan, Suriname, Svalbard and Jan
+    Mayen, Swaziland, Sweden, Switzerland, Syrian Arab Republic, Taiwan,
+    Province of China, Tajikistan, Tanzania, United Republic of, Thailand,
+    Timor-Leste, Tokelau, Tonga, Trinidad and Tobago, Tunisia, Turkey,
+    Turkmenistan, Tuvalu, Uganda, Ukraine, United Arab Emirates, United
+    Kingdom, United States, Uruguay, Uzbekistan, Vanuatu, Venezuela,
+    Vietnam, Virgin Islands, U.S., Wallis and Futuna, Western Sahara, Yemen,
+    Zimbabwe.
+
+    Note that there may be bugs in the FallingRain database. Do not rely on
+    this module for navigation.
+
+COPYRIGHT
+    Copyright (C) 2002-5, Leon Brocard
+
+    This module is free software; you can redistribute it or modify it under
+    the same terms as Perl itself.
+
+AUTHOR
+    Leon Brocard, acme@astray.com. Based upon ideas and code by Nathan
+    Bailey.
+
